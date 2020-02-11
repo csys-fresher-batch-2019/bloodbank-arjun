@@ -1,4 +1,4 @@
-package bloodBankApp;
+package com.chainsys.bloodBankApp.model;
 
 public class BloodGroup {
 
@@ -6,6 +6,7 @@ public class BloodGroup {
 	private String empName;
 	private String email;
 	private String bloodGroup;
+	private boolean active;
 	public int getEmpId() {
 		return empId;
 	}
@@ -30,6 +31,11 @@ public class BloodGroup {
 	public void setBloodGroup(String bloodGroup) {
 		this.bloodGroup = bloodGroup;
 	}
-	
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 	
 }
