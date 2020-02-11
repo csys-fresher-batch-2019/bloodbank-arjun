@@ -1,11 +1,11 @@
 package com.chainsys.bloodbankapp.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.chainsys.bloodbankapp.exception.DbException;
 import com.chainsys.bloodbankapp.model.BloodGroup;
 
 public interface BloodGroupDAO {
 
-	ArrayList<BloodGroup> selectEmpBlood(String bloodGroup) throws DbException;
+	List<BloodGroup> findByBloodGroup(String bloodGroup) throws DbException;
 }

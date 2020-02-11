@@ -7,8 +7,11 @@ import java.sql.SQLException;
 import com.chainsys.bloodbankapp.exception.DbException;
 
 public class ConnectionUtil {
+	
+	private static final Logger logger = Logger.getInstance(ConnectionUtil.class);
+	
 	public static Connection getConnection() throws DbException {
-		Logger logger = new Logger();
+		
 		Connection connection = null;
 		try {
 		Class.forName("oracle.jdbc.driver.OracleDriver");

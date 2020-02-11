@@ -2,8 +2,14 @@ package com.chainsys.bloodbankapp.util;
 
 public class Logger {
 
-	public static Logger getInstance() {
-		return new Logger();
+	private Class clazz;
+	private Logger(Class clazz) {
+		this.clazz = clazz;
+	}
+	public static Logger getInstance(Class clazz) {
+		Logger logger = new Logger(clazz);
+		
+		return logger;
 	}
 
 	public void debug(Object message) {
@@ -15,6 +21,7 @@ public class Logger {
 	}
 
 	public void info(Object message) {
+		//print( "{" + clazz.getSimpleName() + "}-" + message);
 		print(message);
 	}
 
