@@ -3,22 +3,21 @@ package com.chainsys.bloodBankApp.utile;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+import com.chainsys.bloodBankApp.logger.Logger;
 import com.chainsys.bloodBankApp.exception.DbException;
 
 public class ConnectionUtile {
-
 	public static Connection getConnection() throws DbException {
-		
+		Logger logger = new Logger();
 		Connection connection = null;
 		try {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "oracle");
 		}catch(ClassNotFoundException e) {
-			e.printStackTrace();
+			logger.info("Connection Error Message");
 		}
 		catch(SQLException e) {
-			e.printStackTrace();
+			logger.info("SQL Error Message");
 		}
 				return connection;
 	}

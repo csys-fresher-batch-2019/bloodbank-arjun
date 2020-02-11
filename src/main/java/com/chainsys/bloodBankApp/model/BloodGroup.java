@@ -37,5 +37,10 @@ public class BloodGroup {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	@Override
+	public String toString() {
+		return "BloodGroup [empId=" + empId + ", empName=" + empName + ", email=" + email + ", bloodGroup=" + bloodGroup
+				+ ", active=" + active + "]";
+	}
 	
 }
