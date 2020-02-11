@@ -1,4 +1,4 @@
-package com.chainsys.bloodbankapp.implementation;
+package com.chainsys.bloodbankapp.dao.implementation;
 
 import java.sql.Connection;
 
