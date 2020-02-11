@@ -5,7 +5,7 @@ public class BloodGroup {
 	private int empId;
 	private String empName;
 	private String email;
-	private String bloodGroup;
+	private String bloodsGroup;
 	private boolean active;
 	public int getEmpId() {
 		return empId;
@@ -26,10 +26,10 @@ public class BloodGroup {
 		this.email = email;
 	}
 	public String getBloodGroup() {
-		return bloodGroup;
+		return bloodsGroup;
 	}
 	public void setBloodGroup(String bloodGroup) {
-		this.bloodGroup = bloodGroup;
+		this.bloodsGroup = bloodGroup;
 	}
 	public boolean isActive() {
 		return active;
@@ -37,9 +37,22 @@ public class BloodGroup {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	
+	public BloodGroup(int empId, String empName, String email, String bloodsGroup, boolean active) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.email = email;
+		this.bloodsGroup = bloodsGroup;
+		this.active = active;
+	}
+	
+	public BloodGroup() {
+		super();
+	}
 	@Override
 	public String toString() {
-		return "BloodGroup [empId=" + empId + ", empName=" + empName + ", email=" + email + ", bloodGroup=" + bloodGroup
+		return "BloodGroup [empId=" + empId + ", empName=" + empName + ", email=" + email + ", bloodGroup=" + bloodsGroup
 				+ ", active=" + active + "]";
 	}
 	

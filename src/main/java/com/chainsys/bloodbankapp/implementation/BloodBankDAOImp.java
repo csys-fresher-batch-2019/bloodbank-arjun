@@ -17,12 +17,12 @@ public class BloodBankDAOImp implements BloodGroupDAO {
 		
 		Logger logger = new Logger();
 		String sql="select * from blood_bank_app where blood_group=?";
-		ArrayList<BloodGroup> list = new ArrayList<BloodGroup>();
+		ArrayList<BloodGroup> list = new ArrayList<>();
 		
 		try(Connection com= ConnectionUtile.getConnection();
 				PreparedStatement ps=com.prepareStatement(sql);){
 			ps.setString(1,bloodGroup);
-			System.out.println(sql);
+			logger.info(sql);
 			try(ResultSet rs= ps.executeQuery();)
 			{
 			
@@ -39,6 +39,7 @@ public class BloodBankDAOImp implements BloodGroupDAO {
 			list.add(b);
 			}
 			}
+			logger.info(list);
 		}
 			catch(SQLException e) {
 				logger.info("SQL Error Message");
