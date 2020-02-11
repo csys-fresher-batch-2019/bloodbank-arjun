@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.chainsys.bloodbankapp.dao.implementation.BloodBankDAOImp;
@@ -12,7 +13,7 @@ import com.chainsys.bloodbankapp.model.BloodGroup;
 
 public class BloodBankAppServiceTest {
 
-	@Test
+	@Test @Ignore
 	public void test() {
 
 		BloodBankDAOImp bloodDonars=new BloodBankDAOImp();
