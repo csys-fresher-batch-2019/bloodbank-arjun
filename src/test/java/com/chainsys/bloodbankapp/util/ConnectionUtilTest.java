@@ -10,9 +10,14 @@ import com.chainsys.bloodbankapp.exception.DbException;
 public class ConnectionUtilTest {
 
 	@Test
-	public void testValidConnection() throws DbException {
-		Connection con=ConnectionUtil.getConnection();
-		Assert.assertNotNull(con);
+	public void testValidConnection() {
+		try {
+			Connection con=ConnectionUtil.getConnection();
+			Assert.assertNotNull(con);
+		} catch (DbException e) {
+			e.printStackTrace();
+		}
+		
 
 	}
 
