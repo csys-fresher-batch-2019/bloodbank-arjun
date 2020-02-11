@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import com.chainsys.bloodbankapp.dao.BloodGroupDAO;
 import com.chainsys.bloodbankapp.exception.DbException;
 import com.chainsys.bloodbankapp.model.BloodGroup;
-import com.chainsys.bloodbankapp.utile.ConnectionUtile;
-import com.chainsys.bloodbankapp.logger.Logger;
+import com.chainsys.bloodbankapp.util.ConnectionUtil;
+import com.chainsys.bloodbankapp.util.Logger;
 public class BloodBankDAOImp implements BloodGroupDAO {
 
 	public ArrayList<BloodGroup> selectEmpBlood(String bloodGroup) throws DbException {
@@ -19,7 +19,7 @@ public class BloodBankDAOImp implements BloodGroupDAO {
 		String sql="select * from blood_bank_app where blood_group=?";
 		ArrayList<BloodGroup> list = new ArrayList<>();
 		
-		try(Connection com= ConnectionUtile.getConnection();
+		try(Connection com= ConnectionUtil.getConnection();
 				PreparedStatement ps=com.prepareStatement(sql);){
 			ps.setString(1,bloodGroup);
 			logger.info(sql);

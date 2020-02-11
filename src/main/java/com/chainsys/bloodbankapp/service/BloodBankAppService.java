@@ -3,7 +3,7 @@ package com.chainsys.bloodbankapp.service;
 import java.util.ArrayList;
 
 import com.chainsys.bloodbankapp.dao.BloodGroupDAO;
-import com.chainsys.bloodbankapp.implementation.BloodBankDAOImp;
+import com.chainsys.bloodbankapp.dao.implementation.BloodBankDAOImp;
 import com.chainsys.bloodbankapp.model.BloodGroup;
 
 public class BloodBankAppService {

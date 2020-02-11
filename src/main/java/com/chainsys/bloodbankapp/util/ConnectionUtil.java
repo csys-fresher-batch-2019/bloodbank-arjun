@@ -1,12 +1,12 @@
-package com.chainsys.bloodbankapp.utile;
+package com.chainsys.bloodbankapp.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import com.chainsys.bloodbankapp.logger.Logger;
+
 import com.chainsys.bloodbankapp.exception.DbException;
 
-public class ConnectionUtile {
+public class ConnectionUtil {
 	public static Connection getConnection() throws DbException {
 		Logger logger = new Logger();
 		Connection connection = null;
