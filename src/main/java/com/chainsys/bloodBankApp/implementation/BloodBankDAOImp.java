@@ -1,19 +1,21 @@
-package com.chainsys.bloodBankApp.implementation;
+package com.chainsys.bloodbankapp.implementation;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import com.chainsys.bloodBankApp.dao.BloodGroupDAO;
-import com.chainsys.bloodBankApp.exception.DbException;
-import com.chainsys.bloodBankApp.model.BloodGroup;
-import com.chainsys.bloodBankApp.utile.ConnectionUtile;
-
+import com.chainsys.bloodbankapp.dao.BloodGroupDAO;
+import com.chainsys.bloodbankapp.exception.DbException;
+import com.chainsys.bloodbankapp.model.BloodGroup;
+import com.chainsys.bloodbankapp.utile.ConnectionUtile;
+import com.chainsys.bloodbankapp.logger.Logger;
 public class BloodBankDAOImp implements BloodGroupDAO {
 
 	public ArrayList<BloodGroup> selectEmpBlood(String bloodGroup) throws DbException {
 		
+		Logger logger = new Logger();
 		String sql="select * from blood_bank_app where blood_group=?";
 		ArrayList<BloodGroup> list = new ArrayList<BloodGroup>();
 		
@@ -39,7 +41,7 @@ public class BloodBankDAOImp implements BloodGroupDAO {
 			}
 		}
 			catch(SQLException e) {
-				e.printStackTrace();
+				logger.info("SQL Error Message");
 				throw new DbException("ErrorMessages.PREPARE_FAILURE");
 			}
 		return list;	

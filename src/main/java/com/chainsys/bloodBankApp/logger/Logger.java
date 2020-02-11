@@ -1,4 +1,4 @@
-package com.chainsys.bloodBankApp.logger;
+package com.chainsys.bloodbankapp.logger;
 
 public class Logger {
 

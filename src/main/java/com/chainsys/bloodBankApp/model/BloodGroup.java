@@ -1,4 +1,4 @@
-package com.chainsys.bloodBankApp.model;
+package com.chainsys.bloodbankapp.model;
 
 public class BloodGroup {
 

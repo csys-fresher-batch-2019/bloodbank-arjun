@@ -1,8 +1,8 @@
-package com.chainsys.bloodBankApp.dao;
+package com.chainsys.bloodbankapp.dao;
 
 import java.util.ArrayList;
 
-import com.chainsys.bloodBankApp.model.BloodGroup;
+import com.chainsys.bloodbankapp.model.BloodGroup;
 
 public interface BloodGroupDAO {
 

@@ -5,4 +5,4 @@
  * @author arju2383
  *
  */
-package com.chainsys.bloodBankApp.exception;
+package com.chainsys.bloodbankapp.exception;

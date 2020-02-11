@@ -1,10 +1,10 @@
-package com.chainsys.bloodBankApp.Service;
+package com.chainsys.bloodbankapp.service;
 
 import java.util.ArrayList;
 
-import com.chainsys.bloodBankApp.dao.BloodGroupDAO;
-import com.chainsys.bloodBankApp.implementation.BloodBankDAOImp;
-import com.chainsys.bloodBankApp.model.BloodGroup;
+import com.chainsys.bloodbankapp.dao.BloodGroupDAO;
+import com.chainsys.bloodbankapp.implementation.BloodBankDAOImp;
+import com.chainsys.bloodbankapp.model.BloodGroup;
 
 public class BloodBankAppService {
 	private BloodGroupDAO bloodBankDAO=new BloodBankDAOImp();

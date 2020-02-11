@@ -1,7 +1,7 @@
-package bloodBankApp;
+package bloodbankapp;
 
-import com.chainsys.bloodBankApp.exception.DbException;
-import com.chainsys.bloodBankApp.implementation.BloodBankDAOImp;
+import com.chainsys.bloodbankapp.exception.DbException;
+import com.chainsys.bloodbankapp.implementation.BloodBankDAOImp;
 
 public class TestListBloodDonars {
 

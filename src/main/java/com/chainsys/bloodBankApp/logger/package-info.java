@@ -5,4 +5,4 @@
  * @author arju2383
  *
  */
-package com.chainsys.bloodBankApp.logger;
+package com.chainsys.bloodbankapp.logger;

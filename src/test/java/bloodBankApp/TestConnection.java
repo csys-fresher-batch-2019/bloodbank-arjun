@@ -1,9 +1,9 @@
-package bloodBankApp;
+package bloodbankapp;
 
 import java.sql.Connection;
 
-import com.chainsys.bloodBankApp.exception.DbException;
-import com.chainsys.bloodBankApp.utile.ConnectionUtile;
+import com.chainsys.bloodbankapp.exception.DbException;
+import com.chainsys.bloodbankapp.utile.ConnectionUtile;
 
 public class TestConnection {
 
