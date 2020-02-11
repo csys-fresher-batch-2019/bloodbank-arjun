@@ -1,4 +1,4 @@
-package bloodbankapp;
+package com.chainsys.bloodbankapp.test;
 
 import java.sql.Connection;
 

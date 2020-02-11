@@ -1,4 +1,4 @@
-package bloodbankapp;
+package com.chainsys.bloodbankapp.test;
 
 import com.chainsys.bloodbankapp.exception.DbException;
 import com.chainsys.bloodbankapp.implementation.BloodBankDAOImp;
