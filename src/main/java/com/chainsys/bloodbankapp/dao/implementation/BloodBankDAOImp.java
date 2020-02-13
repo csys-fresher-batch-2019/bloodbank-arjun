@@ -128,7 +128,7 @@ public class BloodBankDAOImp implements BloodGroupDAO {
 
 		String sql1="select blood_group from blood_bank_app where emp_id=?";
 
-		String sql="update blood_bank_app set blood_group=? where emp_id=?";
+		String sql="update blood_bank_app set blood_group=? where emp_id=? ";
 
 		String bloodGroup="";
 

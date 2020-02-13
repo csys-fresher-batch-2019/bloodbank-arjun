@@ -6,9 +6,12 @@ import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
 
+import com.chainsys.bloodbankapp.util.Logger;
+
 
 public class SendMailSSL 
 {
+	private static Logger log  =Logger.getInstance(Logger.class);		
 	public static boolean send(final String from,final String password,String to,String sub,String msg) throws IOException
 	{  
 		Properties props = new Properties();    
@@ -29,11 +32,14 @@ public class SendMailSSL
         	MimeMessage message = new MimeMessage(session);    
         	message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));    
         	message.setSubject(sub);    
+        	
         	BodyPart messageBodyPart1 = new MimeBodyPart();  
         	messageBodyPart1.setText("Greetings from Blood Bank");  
+        	
         	BodyPart messageBodyPart2 = new MimeBodyPart(); 
         	messageBodyPart2.setText("\n"+msg+"\n");
         	Multipart multipart = new MimeMultipart();  
+        	
         	BodyPart messageBodyPart3 = new MimeBodyPart();
         	messageBodyPart3.setText("Please Contact your HR \n 9898987656");
         	multipart.addBodyPart(messageBodyPart1);  
@@ -41,13 +47,13 @@ public class SendMailSSL
         	multipart.addBodyPart(messageBodyPart3);
         	message.setContent(multipart );  
         	Transport.send(message);    
-        	System.out.println("message sent successfully");  
         	return true;
         }
         catch (MessagingException e) 
         {
-        	throw new RuntimeException(e);
-        }    
+        	log.error(e);
+        }
+        return false;
 	}
 }
 

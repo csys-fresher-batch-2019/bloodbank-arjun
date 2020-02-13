@@ -5,11 +5,16 @@ import java.util.List;
 import com.chainsys.bloodbankapp.dao.BloodGroupDAO;
 import com.chainsys.bloodbankapp.dao.implementation.BloodBankDAOImp;
 import com.chainsys.bloodbankapp.model.BloodGroup;
+import com.chainsys.bloodbankapp.util.Logger;
 
 public class BloodBankAppService {
+	
+	private Logger log  =Logger.getInstance(Logger.class);
+	
 	private BloodGroupDAO bloodBankDAO = new BloodBankDAOImp();
 
 	public List<BloodGroup> selectEmpBlood(String bloodGroup) throws Exception {
+		log.info(" BloodGroup : "+ bloodGroup);
 		return bloodBankDAO.findByBloodGroup(bloodGroup);
 	}
 

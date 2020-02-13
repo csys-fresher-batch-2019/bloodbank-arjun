@@ -9,26 +9,30 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class BloodGroupUadateInfo {
-	public void BloodGroup() throws Exception
+	public String BloodGroup() throws Exception
 	{
 		Connection con = ConnectionUtil.getConnection();
-		String sql = "select * from blood_bank_app where blood_group is null";
+		String sql = "select email from blood_bank_app where blood_group is null";
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
 		String email = "";
 		String sub = "";
 		String msg = "";
+		boolean valid = false;
 		while(rs.next())
 		{
 			msg = "This mail Intimates you to update your blood group details in Company";
 			email = rs.getString("email");
 			sub = "Update your Blood group details";
 			System.out.println(email);
-			SendMailSSL.send("payrollmavenproject@gmail.com","Pass1234*", email,sub,msg);
-			
+			valid = SendMailSSL.send("payrollmavenproject@gmail.com","Pass1234*", email,sub,msg);
 		}
+		if(valid)
+			return "Mail Sent Successfully";
+		else
+			return "Mail Was not Sent";
 	}
-	public void BloodDonar(String bg) throws Exception
+	public String BloodDonar(String bg) throws Exception
 	{
 		Connection con = ConnectionUtil.getConnection();
 		String sql = "select email from blood_bank_app where blood_group = ?";
@@ -38,16 +42,19 @@ public class BloodGroupUadateInfo {
 		String email = "";
 		String sub = "";
 		String msg = "";
+		boolean valid = false;
 		while(rs.next())
 		{
-	//System.out.println("!!");
 			email = rs.getString("email");
 			sub = "A blood bank need your blood to save someone's life";
 			msg = "If you are willing to donate your blood \n ";
-			System.out.println(email);
-			SendMailSSL.send("payrollmavenproject@gmail.com","Pass1234*", email,sub,msg);
-			
+			valid = SendMailSSL.send("payrollmavenproject@gmail.com","Pass1234*", email,sub,msg);			
 		}
+		if(valid)
+			return "Mail Sent Successfully";
+		else
+			return "Mail Was not Sent";
+
 	}
 
 }
