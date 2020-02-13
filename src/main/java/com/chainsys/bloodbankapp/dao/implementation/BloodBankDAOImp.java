@@ -25,6 +25,7 @@ public class BloodBankDAOImp implements BloodGroupDAO {
 		try (Connection com = ConnectionUtil.getConnection(); PreparedStatement ps = com.prepareStatement(sql);) {
 			ps.setString(1, bloodGroup);
 			LOG.info(sql);
+			LOG.info("dao-" + bloodGroup);
 			try (ResultSet rs = ps.executeQuery();) {
 
 				while (rs.next()) {

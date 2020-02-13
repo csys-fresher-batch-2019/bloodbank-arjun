@@ -8,7 +8,7 @@ public class TestMail {
 
 public static void main(String[] args) throws Exception {
 	BloodGroupUadateInfo b = new BloodGroupUadateInfo();
-	//log.info(b.BloodGroup());
-	log.debug(b.BloodDonar("B+ve"));
+	log.info(b.BloodGroup());
+	//log.debug(b.BloodDonar("B+ve"));
 }
 }
