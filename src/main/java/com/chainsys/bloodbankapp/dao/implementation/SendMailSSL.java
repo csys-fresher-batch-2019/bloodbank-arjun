@@ -9,7 +9,7 @@ import javax.mail.internet.*;
 
 public class SendMailSSL 
 {
-	public boolean send(final String from,final String password,String to,String sub,String msg) throws IOException
+	public static boolean send(final String from,final String password,String to,String sub,String msg) throws IOException
 	{  
 		Properties props = new Properties();    
         props.put("mail.smtp.host", "smtp.gmail.com");    
