@@ -9,16 +9,16 @@ public class BloodGroupTest {
 	public void testaValidModel() {
 		BloodGroup blood = new BloodGroup();
 		blood.setUserId(5);
-		blood.setUserName("ARUN");
+		blood.setUserName("Arjun Kumar");
 		blood.setEmail("arjun798@gmail.com");
-		blood.setBloodsGroup("A+ve");
+		blood.setBloodsGroup("B+ve");
 		blood.setActive(true);
 		blood.setCity("madurai");
 
-		Assert.assertEquals(1, blood.getUserId());
-		Assert.assertEquals("ARUN", blood.getUserName());
+		Assert.assertEquals(5, blood.getUserId());
+		Assert.assertEquals("Arjun Kumar", blood.getUserName());
 		Assert.assertEquals("arjun798@gmail.com", blood.getEmail());
-		Assert.assertEquals("A+ve", blood.getBloodsGroup());
+		Assert.assertEquals("B+ve", blood.getBloodsGroup());
 		Assert.assertEquals(true, blood.isActive());
 		Assert.assertEquals("madurai",blood.getCity());
 
