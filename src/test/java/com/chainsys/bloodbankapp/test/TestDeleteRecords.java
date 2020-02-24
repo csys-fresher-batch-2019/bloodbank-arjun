@@ -15,10 +15,10 @@ public class TestDeleteRecords {
 	public static void main(String[] args) throws DbException {
 		
 		Scanner sc = new Scanner(System.in);
-		logger.info("Enter employee id : ");
+		logger.info("Enter user id : ");
 		int employeeId = sc.nextInt();
 		BloodGroup mail1=new BloodGroup();
-		mail1.setEmpId(employeeId);
+		mail1.setUserId(employeeId);
 		BloodBankDAOImp mail2=new BloodBankDAOImp();
 		boolean status = mail2.deleteEmployeeRecord(mail1);
 		if (status) {

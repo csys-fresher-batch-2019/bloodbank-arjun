@@ -15,15 +15,12 @@ public class TestUpdateBloodGroup {
 	public static void main(String[] args) throws DbException {
 		
 		Scanner sc = new Scanner(System.in);
-		logger.info("Enter employee id : ");
-		int employeeId = sc.nextInt();
+		logger.info("Enter user id : ");
+		int userId = sc.nextInt();
 		logger.info("Enter blood group(Ex:A+ve): ");
 		String blood=sc.next();
-		BloodGroup mail1=new BloodGroup();
-		mail1.setEmpId(employeeId);
-		mail1.setBloodGroup(blood);
 		BloodBankDAOImp mail2=new BloodBankDAOImp();
-		boolean status = mail2.updateBloodGroup(mail1);
+		boolean status = mail2.updateBloodGroup(userId, blood);
 		if (status) {
 			logger.info("Successfully Updated");
 		} else {

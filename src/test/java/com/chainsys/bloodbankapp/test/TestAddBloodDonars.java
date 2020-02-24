@@ -8,7 +8,6 @@ import com.chainsys.bloodbankapp.model.BloodGroup;
 import com.chainsys.bloodbankapp.util.ConnectionUtil;
 import com.chainsys.bloodbankapp.util.Logger;
 
-
 public class TestAddBloodDonars {
 
 	private static final Logger logger = Logger.getInstance(ConnectionUtil.class);
@@ -20,18 +19,19 @@ public class TestAddBloodDonars {
 		
 		Scanner sc = new Scanner(System.in);
 		logger.info("Enter EmpName :");
-		String empName=sc.nextLine();
+		String userName=sc.nextLine();
 		logger.info("Enter Email :");
 		String email=sc.nextLine();
-		logger.info("Enter BloodGroup :");
-		String bloodGroup=sc.nextLine();
+		logger.info("Enter BloodGroupId :");
+		int bloodGroupId=sc.nextInt();
+		logger.info("Enter City :");
+		String city=sc.next();
 		
-		model.setEmpName(empName);
+		model.setUserName(userName);
 		model.setEmail(email);
-		model.setBloodGroup(bloodGroup);
+		model.setBloodGroupId(bloodGroupId);
+		model.setCity(city);
 		
-		imp.addEmployeeDetails(model);
-		
+		imp.addEmployeeDetails(model);	
 	}
-
 }

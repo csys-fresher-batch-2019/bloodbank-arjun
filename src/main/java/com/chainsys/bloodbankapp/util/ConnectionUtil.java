@@ -4,9 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import org.jdbi.v3.core.Jdbi;
-import org.jdbi.v3.sqlobject.SqlObjectPlugin;
-
 import com.chainsys.bloodbankapp.exception.DbException;
 
 public class ConnectionUtil {
@@ -27,7 +24,7 @@ public class ConnectionUtil {
 		}
 		return connection;
 	}
-	public static Jdbi getJdbi()  {
+/*	public static Jdbi getJdbi()  {
 		Jdbi jdbi=null;
 		try {
 			Connection connection = ConnectionUtil.getConnection();
@@ -37,5 +34,5 @@ public class ConnectionUtil {
 			throw new RuntimeException(e);
 		}
 		return jdbi;
-	}
+	}*/
 }

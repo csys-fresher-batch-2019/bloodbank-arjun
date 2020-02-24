@@ -16,7 +16,7 @@ public class TestUpdateBloodDonars {
 	public static void main(String[] args) throws DbException {
 
 		BloodBankDAOImp imp = new BloodBankDAOImp();
-		BloodGroup model = new BloodGroup();
+		//BloodGroup model = new BloodGroup();
 
 		Scanner sc = new Scanner(System.in);
 
@@ -27,17 +27,15 @@ public class TestUpdateBloodDonars {
 		String email = sc.next();
 		logger.info("Enter Active or Not(true/false) :");
 		boolean active = sc.nextBoolean();
-
-		model.setEmail(email);
-		model.setActive(active);
-
-		boolean status = imp.updateDonateStatus(model);
+		//model.setEmail(email);
+		//model.setActive(active);
+		boolean status = imp.updateDonateStatus(active,email);
 		if (status) {
 			logger.info("Successfully Updated");
 		} else {
 			logger.info("Updatation Failed");
 		}
-sc.close();
+		sc.close();
 	}
 
 }

@@ -56,13 +56,12 @@ public class SendMailSSL
         	multipart.addBodyPart(messageBodyPart3);
         	message.setContent(multipart );  
         	Transport.send(message);    
-        	return true;
         }
         catch (MessagingException e) 
         {
         	log.error(e);
         }
-        return false;
+        return true;
 	}
 }
 

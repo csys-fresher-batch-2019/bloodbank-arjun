@@ -14,16 +14,13 @@ public class TestUpdateEmail {
 	
 	public static void main(String[] args) throws DbException {
 		
-		logger.info("Enter employee id : ");
+		logger.info("Enter user id : ");
 		Scanner sc = new Scanner(System.in);
-		int employeeId = sc.nextInt();
+		int userId = sc.nextInt();
 		logger.info("Enter email id: ");
 		String mail=sc.next();
-		BloodGroup mail1=new BloodGroup();
-		mail1.setEmpId(employeeId);
-		mail1.setEmail(mail);
 		BloodBankDAOImp mail2=new BloodBankDAOImp();
-		boolean status = mail2.updateEmail(mail1);
+		boolean status = mail2.updateEmail(userId,mail);
 		if (status) {
 			logger.info("Successfully Updated");
 		} else {

@@ -8,17 +8,19 @@ public class BloodGroupTest {
 	@Test
 	public void testaValidModel() {
 		BloodGroup blood = new BloodGroup();
-		blood.setEmpId(1);
-		blood.setEmpName("ARJUN");
-		blood.setEmail("arjun@gmail.com");
-		blood.setBloodGroup("B+ve");
+		blood.setUserId(5);
+		blood.setUserName("ARUN");
+		blood.setEmail("arjun798@gmail.com");
+		blood.setBloodsGroup("A+ve");
 		blood.setActive(true);
+		blood.setCity("madurai");
 
-		Assert.assertEquals(1, blood.getEmpId());
-		Assert.assertEquals("ARJUN", blood.getEmpName());
-		Assert.assertEquals("arjun@gmail.com", blood.getEmail());
-		Assert.assertEquals("B+ve", blood.getBloodGroup());
+		Assert.assertEquals(1, blood.getUserId());
+		Assert.assertEquals("ARUN", blood.getUserName());
+		Assert.assertEquals("arjun798@gmail.com", blood.getEmail());
+		Assert.assertEquals("A+ve", blood.getBloodsGroup());
 		Assert.assertEquals(true, blood.isActive());
+		Assert.assertEquals("madurai",blood.getCity());
 
 	}
 }

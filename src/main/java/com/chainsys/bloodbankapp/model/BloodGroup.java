@@ -2,22 +2,25 @@ package com.chainsys.bloodbankapp.model;
 
 public class BloodGroup {
 
-	private int empId;
-	private String empName;
+	private int userId;
+	private String userName;
 	private String email;
+	private int bloodGroupId;
 	private String bloodsGroup;
+	private String city;
 	private boolean active;
-	public int getEmpId() {
-		return empId;
+	
+	public int getUserId() {
+		return userId;
 	}
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
-	public String getEmpName() {
-		return empName;
+	public String getUserName() {
+		return userName;
 	}
-	public void setEmpName(String empName) {
-		this.empName = empName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getEmail() {
 		return email;
@@ -25,11 +28,23 @@ public class BloodGroup {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getBloodGroup() {
+	public int getBloodGroupId() {
+		return bloodGroupId;
+	}
+	public void setBloodGroupId(int bloodGroupId) {
+		this.bloodGroupId = bloodGroupId;
+	}
+	public String getBloodsGroup() {
 		return bloodsGroup;
 	}
-	public void setBloodGroup(String bloodGroup) {
-		this.bloodsGroup = bloodGroup;
+	public void setBloodsGroup(String bloodsGroup) {
+		this.bloodsGroup = bloodsGroup;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
 	}
 	public boolean isActive() {
 		return active;
@@ -37,23 +52,25 @@ public class BloodGroup {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
-	public BloodGroup(int empId, String empName, String email, String bloodsGroup, boolean active) {
+	public BloodGroup(int userId, String userName, String email, int bloodGroupId, String bloodsGroup, String city,
+			boolean active) {
 		super();
-		this.empId = empId;
-		this.empName = empName;
+		this.userId = userId;
+		this.userName = userName;
 		this.email = email;
+		this.bloodGroupId = bloodGroupId;
 		this.bloodsGroup = bloodsGroup;
+		this.city = city;
 		this.active = active;
 	}
-	
 	public BloodGroup() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "BloodGroup [empId=" + empId + ", empName=" + empName + ", email=" + email + ", bloodGroup=" + bloodsGroup
-				+ ", active=" + active + "]";
+		return "BloodGroup [userId=" + userId + ", userName=" + userName + ", email=" + email + ", bloodGroupId="
+				+ bloodGroupId + ", bloodsGroup=" + bloodsGroup + ", city=" + city + ", active=" + active + "]";
 	}
 	
 }
+	

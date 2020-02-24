@@ -9,10 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class BloodGroupUadateInfo {
-	public String BloodGroup() throws Exception
+	/*public String BloodGroup() throws Exception
 	{
 		Connection con = ConnectionUtil.getConnection();
-		String sql = "select email from blood_bank_app where blood_group is null";
+		String sql = "select email from blood_app where blood_group is null";
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
 		String email = "";
@@ -31,11 +31,11 @@ public class BloodGroupUadateInfo {
 			return "Mail Sent Successfully";
 		else
 			return "Mail Was not Sent";
-	}
+	}*/
 	public String BloodDonar(String bg) throws Exception
 	{
 		Connection con = ConnectionUtil.getConnection();
-		String sql = "select email from blood_bank_app where blood_group = ?";
+		String sql = "select user_id,user_name,email from blood_app where blood_group_id=(select blood_group_id from bloodGroupDetails where blood_group = ? )";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, bg);
 		ResultSet rs = stmt.executeQuery();
@@ -46,9 +46,10 @@ public class BloodGroupUadateInfo {
 		while(rs.next())
 		{
 			email = rs.getString("email");
+			System.out.println(email);
 			sub = "A blood bank need your blood to save someone's life";
 			msg = "If you are willing to donate your blood \n ";
-			valid = SendMailSSL.send("payrollmavenproject@gmail.com","Pass1234*", email,sub,msg);			
+			valid = SendMailSSL.send("payrollmavenproject@gmail.com","Pass1234*",email,sub,msg);			
 		}
 		if(valid)
 			return "Mail Sent Successfully";
